@@ -8,6 +8,10 @@ package informes;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+
 /**
  *
  * @author Dams2
@@ -31,7 +35,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBoxCiudad = new javax.swing.JComboBox<>();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        boton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,15 +46,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("Informe");
-        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        boton.setText("Informe");
+        boton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton1MouseClicked(evt);
+                botonMouseClicked(evt);
             }
         });
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        boton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                botonActionPerformed(evt);
             }
         });
 
@@ -62,17 +66,17 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jComboBoxCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton1)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addComponent(boton)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton1)
+                    .addComponent(boton)
                     .addComponent(jComboBoxCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,24 +86,25 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxCiudadActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
-      
-        
+    private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
+        System.out.println("Boton sisi");
         try {
             Class.forName("org.hsqldb.jdbcDriver").newInstance();
-            Connection connection = DriverManager.getConnection("jdbc:hsqldb: hsql://127.0.0.1/","sa","");
+            Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://127.0.0.1/","sa","");
               Map parametros = new HashMap();
-                parametros.put("CIUDAD", jComboBoxCiudad.getSelectedItem());
-              /*  JasperPrint print = JasperFillManager.fillReport("informes/report1.jasper", parametros, connection);
-        JasperExportManager.exportReportToPdfFile(print, "informes/report1.pdf");*/
-                
+                parametros.put("Ciudad", jComboBoxCiudad.getSelectedItem());
+                JasperPrint  print = JasperFillManager.fillReport("informes/informe.jasper", parametros, connection);
+            JasperExportManager.exportReportToPdfFile(print, "informes/report1.pdf");
+                System.out.println("Boton sisi");
         } catch (Exception e) {
+            e.printStackTrace();
         }
-    }//GEN-LAST:event_jToggleButton1MouseClicked
+    }//GEN-LAST:event_botonActionPerformed
+
+    private void botonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMouseClicked
+
+       
+    }//GEN-LAST:event_botonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -137,7 +142,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton boton;
     private javax.swing.JComboBox<String> jComboBoxCiudad;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
