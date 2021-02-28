@@ -34,77 +34,169 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBoxCiudad = new javax.swing.JComboBox<>();
-        boton = new javax.swing.JToggleButton();
+        informeSimple = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        informeAgrupado = new javax.swing.JButton();
+        Subinforme = new javax.swing.JButton();
+        cod_fab = new javax.swing.JComboBox<>();
+        Gráfico = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBoxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dallas", " " }));
-        jComboBoxCiudad.addActionListener(new java.awt.event.ActionListener() {
+        informeSimple.setText("Informe");
+        informeSimple.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                informeSimpleMouseClicked(evt);
+            }
+        });
+        informeSimple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxCiudadActionPerformed(evt);
+                informeSimpleActionPerformed(evt);
             }
         });
 
-        boton.setText("Informe");
-        boton.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setText("Informe simple");
+
+        jLabel2.setText("Informe por grupos");
+
+        informeAgrupado.setText("Informe por grupos");
+        informeAgrupado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonMouseClicked(evt);
+                informeAgrupadoMouseClicked(evt);
             }
         });
-        boton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonActionPerformed(evt);
+
+        Subinforme.setText("Subinforme + parametro");
+        Subinforme.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubinformeMouseClicked(evt);
             }
         });
+
+        cod_fab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", " " }));
+
+        Gráfico.setText("informe  con gráfico");
+        Gráfico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GráficoMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setText("Informe con gráfico");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jComboBoxCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(boton)
-                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(informeAgrupado, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                        .addComponent(informeSimple))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(cod_fab, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Subinforme, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Gráfico, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(boton)
-                    .addComponent(jComboBoxCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(informeSimple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(informeAgrupado))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Subinforme)
+                    .addComponent(cod_fab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Gráfico)
+                    .addComponent(jLabel3))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBoxCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCiudadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxCiudadActionPerformed
-
-    private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
-        System.out.println("Boton sisi");
+    private void informeSimpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_informeSimpleActionPerformed
+       
         try {
-            Class.forName("org.hsqldb.jdbcDriver").newInstance();
-            Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://127.0.0.1/","sa","");
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tienda","root","root");
               Map parametros = new HashMap();
-                parametros.put("Ciudad", jComboBoxCiudad.getSelectedItem());
-                JasperPrint  print = JasperFillManager.fillReport("informes/informe.jasper", parametros, connection);
-            JasperExportManager.exportReportToPdfFile(print, "informes/report1.pdf");
-                System.out.println("Boton sisi");
+        
+                JasperPrint  print = JasperFillManager.fillReport("informes/informeSimple.jasper", parametros, connection);
+            JasperExportManager.exportReportToPdfFile(print, "informes/salida/informeSimple.pdf");
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_botonActionPerformed
+    }//GEN-LAST:event_informeSimpleActionPerformed
 
-    private void botonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMouseClicked
+    private void informeSimpleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_informeSimpleMouseClicked
 
        
-    }//GEN-LAST:event_botonMouseClicked
+    }//GEN-LAST:event_informeSimpleMouseClicked
+
+    private void informeAgrupadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_informeAgrupadoMouseClicked
+       try {
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tienda","root","root");
+              Map parametros = new HashMap();
+               
+                JasperPrint  print = JasperFillManager.fillReport("informes/informeAgrupado.jasper", parametros, connection);
+            JasperExportManager.exportReportToPdfFile(print, "informes/salida/informeAgrupado.pdf");
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_informeAgrupadoMouseClicked
+
+    private void SubinformeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubinformeMouseClicked
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tienda","root","root");
+              Map parametros = new HashMap();
+               parametros.put("cod_fab",cod_fab.getSelectedItem());
+                JasperPrint  print = JasperFillManager.fillReport("informes/informeSubinforme.jasper", parametros, connection);
+            JasperExportManager.exportReportToPdfFile(print, "informes/salida/informeSubinforme.pdf");
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_SubinformeMouseClicked
+
+    private void GráficoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GráficoMouseClicked
+         try {
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tienda","root","root");
+              Map parametros = new HashMap();
+             
+                JasperPrint  print = JasperFillManager.fillReport("informes/informe&Grafico.jasper", parametros, connection);
+            JasperExportManager.exportReportToPdfFile(print, "informes/salida/informe&Grafico.pdf");
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_GráficoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -142,7 +234,13 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton boton;
-    private javax.swing.JComboBox<String> jComboBoxCiudad;
+    private javax.swing.JButton Gráfico;
+    private javax.swing.JButton Subinforme;
+    private javax.swing.JComboBox<String> cod_fab;
+    private javax.swing.JButton informeAgrupado;
+    private javax.swing.JToggleButton informeSimple;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
