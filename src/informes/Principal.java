@@ -5,6 +5,8 @@
  */
 package informes;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -145,7 +147,8 @@ public class Principal extends javax.swing.JFrame {
         
                 JasperPrint  print = JasperFillManager.fillReport("informes/informeSimple.jasper", parametros, connection);
             JasperExportManager.exportReportToPdfFile(print, "informes/salida/informeSimple.pdf");
-            
+              myFile = new File("informes/salida/informeSimple.pdf");
+           Desktop.getDesktop().open(myFile);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -164,7 +167,8 @@ public class Principal extends javax.swing.JFrame {
                
                 JasperPrint  print = JasperFillManager.fillReport("informes/informeAgrupado.jasper", parametros, connection);
             JasperExportManager.exportReportToPdfFile(print, "informes/salida/informeAgrupado.pdf");
-        
+            myFile = new File("informes/salida/informeAgrupado.pdf");
+           Desktop.getDesktop().open(myFile);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -178,7 +182,8 @@ public class Principal extends javax.swing.JFrame {
                parametros.put("cod_fab",cod_fab.getSelectedItem());
                 JasperPrint  print = JasperFillManager.fillReport("informes/informeSubinforme.jasper", parametros, connection);
             JasperExportManager.exportReportToPdfFile(print, "informes/salida/informeSubinforme.pdf");
-        
+         myFile = new File("informes/salida/informeSubinforme.pdf");
+           Desktop.getDesktop().open(myFile);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -192,7 +197,8 @@ public class Principal extends javax.swing.JFrame {
              
                 JasperPrint  print = JasperFillManager.fillReport("informes/informe&Grafico.jasper", parametros, connection);
             JasperExportManager.exportReportToPdfFile(print, "informes/salida/informe&Grafico.pdf");
-        
+          myFile = new File("informes/salida/informe&Grafico.pdf");
+           Desktop.getDesktop().open(myFile);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -232,6 +238,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
+    
+    private File myFile;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Gráfico;
